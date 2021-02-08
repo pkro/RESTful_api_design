@@ -354,3 +354,33 @@ Good design principles that *should* be followed
 - **L**ogical (consistent usage patterns, principle of least surprise)
 
 ## Building APIs in PHP using the Slim micro framewor
+
+### Project plan for "Chatter" (twitter clone) API
+
+#### Phase 1: Scope
+
+A single route that let's user retrieve a list of messages (body, sender, datetime). No worries about timezones, authorization etc. at this point.
+
+##### Definitions
+
+- Routes: URL and HTTP verb pattern we want to match and process
+  - GET /messages -> get all messages, expensive operation
+  - GET /messages/$message_id -> get single message
+  - POST /user
+  - DELETE /message/$message_id
+
+- Middleware - Code run before and after application code such as
+  - Steps in a workflow
+  - Business rules (e.g. check customer balance)
+  - Authentication
+  - Content negotiation
+  - etc
+
+- Containers
+  - Handles details of creation, mantenance and cleanup of services important the system (logging, db etc.)
+
+##### The plan
+
+- Wire a simple route
+- Apply middleware
+- Use service container
