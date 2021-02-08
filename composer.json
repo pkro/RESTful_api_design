@@ -1,7 +1,12 @@
 {
-    "require": {
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.3",
-        "illuminate/database": "^7.30"
+  "require": {
+    "slim/slim": "4.*",
+    "slim/psr7": "^1.3",
+    "illuminate/database": "^7.30"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chatter\\": "src/Chatter/"
     }
+  }
 }
