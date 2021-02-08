@@ -3,6 +3,7 @@ require __DIR__ . '/../vendor/autoload.php';
 require('../src/bootstrap.php');
 
 use Chatter\Models\Message;
+use Chatter\Middleware\Logging as ChatterLogging;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
@@ -10,6 +11,7 @@ use Slim\Factory\AppFactory;
 
 $app = AppFactory::create();
 $app->setBasePath('/slimcourse');
+$app->add(new ChatterLogging());
 
 $app->get('/messages', function (Request $request, Response $response, $args) {
   $_message = new Message();
